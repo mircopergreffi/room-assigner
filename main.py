@@ -10,6 +10,9 @@ def config_check(config):
 	# Check if the preferences are valid
 	for member in config['preferences']:
 		for m in config['preferences'][member]:
+			if (member == m):
+				print('ERROR: Member', member, 'has a preference to itself')
+				return False
 			p = config['preferences'][member][m]
 			if p < 0:
 				print('ERROR: Member', member, 'has negative preference for', m)
