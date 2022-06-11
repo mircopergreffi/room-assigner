@@ -28,15 +28,15 @@ def calcualte_preference(permutation, config):
 	pref = 0
 	for room in permutation:
 		for member1 in room:
-			if not member1 in config['preferences']:
-				pref += config['points_per_person']
-				continue
 			for member2 in room:
 				if member1 == member2:
 					continue
+				if not member1 in config['preferences']:
+					pref = pref + config['points_per_person']
+					continue
 				if not member2 in config['preferences'][member1]:
 					continue
-				pref += config['preferences'][member1][member2]
+				pref = pref + config['preferences'][member1][member2]
 	return pref
 
 def main():
