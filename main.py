@@ -3,9 +3,22 @@ from itertools import permutations, islice
 import yaml
 
 def config_check(config):
+	# Check if the number of beds is sufficient for the number of members
 	if config['sum_of_beds'] < config['number_of_members']:
-		print('Not enough beds for all members')
+		print('ERROR: Not enough beds for all members')
 		return False
+	# Check if the preferences are valid
+	for member in config['preferences']:
+		for m in config['preferences'][member]:
+			p = config['preferences'][member][m]
+			if p < 0:
+				print('ERROR: Member', member, 'has negative preference for', m)
+				return False
+			if p > config['number_of_members'] + 1:
+				print('ERROR: Member', member, 'has preference for ', m, 'which is too high')
+				return False
+		if sum(config['preferences'][member].values()) < (config['number_of_members'] - 1) * config['points_per_person']:
+			print('Warning: Member', member, 'has sum of preferences below maximum')
 	return True
 
 def calcualte_preference(permutation, config):
