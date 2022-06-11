@@ -1,0 +1,34 @@
+
+# List beds in each room
+rooms: [4,4]
+
+# List of members to be assigned.
+# The totale number of members must be equal or less
+# than the total number of beds (sum of beds in each room).
+members:
+  - barbuz
+  - fezz
+  - gella
+  - mala
+  - maso
+  - mirco
+  - nico
+  - sean
+
+# The number of points each person can assign is calculated by:
+# (number_of_members - 1) * point_per_person
+points_per_person: 3
+
+# Map of preferences
+# Every member can assign a maximum of points combined (see above),
+# with a maximum of (points_per_person - 1) per member.
+preferences:
+  barbuz:
+    fezz: 3
+    gella: 3
+    mala: 3
+    maso: 3
+    mirco: 3
+    nico: 3
+    sean: 3
+# ...
