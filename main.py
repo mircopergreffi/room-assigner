@@ -41,7 +41,21 @@ def main():
 
 	zipped = list(zip(perms, prefs))
 	zipped.sort(key=lambda x: x[1], reverse=True)
-	print(zipped[0])
+
+	# Print the best permutation
+	print('Best permutation:')
+	for room in zipped[0][0]:
+		print(room)
+	print('With preference score:', zipped[0][1])
+
+	print()
+
+	# Print the worst permutation
+	print('Worst permutation:')
+	for room in zipped[-1][0]:
+		print(room)
+	print('With preference score:', zipped[-1][1])
+
 
 	# print(perms[0])
 	# print(prefs[0])
