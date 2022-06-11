@@ -34,9 +34,16 @@ def main():
 	if not config_check(config):
 		exit()
 	
+	# Generate all permutations
 	perms = permutations(config['members'], config['number_of_members'])
+	# Split the permutations into rooms
 	perms = [iter(perm) for perm in perms]
 	perms = [[list(islice(perm, room)) for room in config['rooms']] for perm in perms]
+	# Sort all room alfabetically
+	perms = [[sorted(room) for room in perm] for perm in perms]
+	# Remove duplicates
+	perms = [i for n,i in enumerate(perms) if i not in perms[:n]]
+
 	prefs = [calcualte_preference(perm, config) for perm in perms]
 
 	zipped = list(zip(perms, prefs))
