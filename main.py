@@ -63,12 +63,11 @@ def main():
 		print(room)
 	print('With preference score:', zipped[-1][1])
 
+	print()
 
-	# print(perms[0])
-	# print(prefs[0])
-
-	# print(max(prefs))
-
+	# Print all permutations
+	for z in zipped:
+		print(z)
 
 if __name__=="__main__":
     main()
