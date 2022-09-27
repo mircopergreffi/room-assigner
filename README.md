@@ -6,8 +6,8 @@ See `config_template.yaml` file for more.
 
 Returns the optimal room assignments.  
 Every room assignment has a score which is the sum of the votes assigned by members. A vote will be added in the room assignment score if and only if the voter is in the same room of member he voted for.  
-Every room assignment possible is calculated and its score is calculated. The top 10 rooms are then sorted and shown.  
-This algorithm of finding the best room assignement is not very efficient, but for a small number of members and rooms it's feasible on modern hardware.  
+The score is computed for every room assignment possible. The top 10 rooms are then sorted by score descending and shown.  
+This algorithm for finding the best room assignement is not very efficient, but for a small number of members and rooms it's feasible on modern hardware.  
 
 ## Requirements
 It requires Python3 and pip for dependencies.  
