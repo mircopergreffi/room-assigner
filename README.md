@@ -26,10 +26,10 @@ Results are saved in `results.txt`.
 
 ## Leaderboard
 See who is the most popular.  
-Execute this command to generate the leaderboard.  
+Execute the following command to generate the leaderboard.  
 ```
 $ python leaderboard.py
 ```
 Results are saved in file `leaderboard.txt`.  
 
-Members are ranked by how many votes they recived.
+Members are ranked by how many votes they received.
