@@ -4,6 +4,8 @@ Simple room assigner.
 Rooms are determined by votes.  
 See `config_template.yaml` file for more.  
 
+Returns the optimal room assignments by maximizing the member votes 
+
 ## Requirements
 It requires Python3 and pip for dependencies.  
 Check python installation and version:  
