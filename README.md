@@ -12,8 +12,11 @@ $ python --version
 Python 3.10.5
 ```
 
-Install dependencies:  
+## Install
+Clone repository and instal dependencies:  
 ```
+$ git clone https://github.com/mircopergreffi/room-assigner
+$ cd room-assigner
 $ python -m pip install -r requirements.txt
 ```
 
